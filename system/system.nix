@@ -5,6 +5,7 @@
     module = { config, lib, pkgs, ... }: {
       imports = [ ./_hardware-configuration.nix ];
 
+      xdg.portal.enable = true; # Needed for flatpak
       services.flatpak.enable = true; # Remember that flatpaks are NOT declarative
 
       environment.systemPackages = [pkgs.git];
