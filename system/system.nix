@@ -5,6 +5,8 @@
     module = { config, lib, pkgs, ... }: {
       imports = [ ./_hardware-configuration.nix ];
 
+      services.flatpak.enable = true; # Remember that flatpaks are NOT declarative
+
       environment.systemPackages = [pkgs.git];
 
       boot.loader.systemd-boot.enable = true;
